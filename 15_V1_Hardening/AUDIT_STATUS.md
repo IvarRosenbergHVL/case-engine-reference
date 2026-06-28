@@ -2,7 +2,7 @@
 id: CER-1508
 title: V1 Audit Status
 status: draft
-version: 0.1
+version: 0.2
 tags:
   - v1
   - audit
@@ -25,23 +25,38 @@ The goal is to make the existing scope coherent, case-independent, navigable, an
 |---|---:|---|
 | V1 scope freeze | Complete | Scope freeze exists and is referenced from release materials. |
 | Top-level navigation | In progress | README, HOME, Roadmap, Master Outline, and Changelog are aligned to V1. |
-| Example safety | In progress | Known hidden identity concern remediated; issue remains open until full audit. |
+| Section landing pages | In progress | Missing README files for 00 and 01 were added in audit pass 00-03. |
+| Example safety | In progress | Known hidden identity concern remediated; 00-03 pass found no remaining direct match. |
 | Terminology | In progress | Terminology decisions exist; full repo application still needs review. |
 | Normative language | In progress | V1 rules exist; full MUST/SHOULD/MAY pass remains. |
-| Cross-references | In progress | Core navigation exists; full Related reference audit remains. |
+| Cross-references | In progress | 00 and 01 sidebar landing links repaired; full Related reference audit remains. |
 | Schemas | Complete for V1 | Minimal schema set exists. No schema expansion planned for V1. |
 | Compliance | Complete for V1 | Minimal compliance model exists. |
 | Obsidian support | Complete for V1 | Vault files and HOME portal exist. |
 | Static site support | In progress | Docusaurus scaffold exists; build validation remains. |
 | Release definition | Complete | CER_VERSION_1_0.md defines V1 release intent and boundaries. |
-| License | Open | Release blocker until decided. |
+| License | Deferred | License is intentionally deferred while the repository remains private project work. |
+
+## Audit passes
+
+| Pass | Scope | Status | Record |
+|---|---|---:|---|
+| 00-03 | Specification Framework, Foundations, Case Architecture, Evidence System | Complete for V1 RC prep | `15_V1_Hardening/AUDIT_PASS_00_03.md` |
+| 04-06 | Document System, Document Types, Discovery System | Pending | TBD |
+| 07-09 | Information Economy, Failure Modes, Validation | Pending | TBD |
+| 10-12 | Rendering, Artifact Production, Case Engine | Pending | TBD |
+| 13-15 | Production Graphs, Compliance, V1 Hardening | Pending | TBD |
+| Support | ADR, rules, patterns, schemas, tests, extensions, workflows | Pending | TBD |
 
 ## Open release blockers
 
-- License must be selected and committed.
 - Full example safety audit must be completed or remaining risks tracked.
 - Full cross-reference audit must be completed or remaining issues tracked.
 - Docusaurus build should be tested in CI.
+
+## Deferred release decisions
+
+- License selection is deferred for now.
 
 ## Completed remediation
 
@@ -52,15 +67,15 @@ The goal is to make the existing scope coherent, case-independent, navigable, an
 - RC Checklist added.
 - Release Checklist added.
 - CER Version 1.0 definition added.
+- Section index files added for 00 and 01.
 
 ## Next audit pass
 
 The next pass should focus on:
 
-- `00_Specification_Framework/`
-- `01_Foundations/`
-- `02_Case_Architecture/`
-- `03_Evidence_System/`
+- `04_Document_System/`
+- `05_Document_Types/`
+- `06_Discovery_System/`
 
 Review criteria:
 
@@ -69,6 +84,7 @@ Review criteria:
 - clear normative language
 - no obvious broken references
 - no scope expansion beyond V1
+- Docusaurus and Obsidian navigation remain valid
 
 ## Related
 
