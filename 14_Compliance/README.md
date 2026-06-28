@@ -2,11 +2,12 @@
 id: CER-1400
 title: Compliance Index
 status: draft
-version: 0.1
+version: 0.2
 tags:
   - compliance
   - v1
   - implementation
+  - audit-safe
 ---
 
 # Compliance
@@ -59,6 +60,18 @@ A compliance claim SHOULD state:
 - human process dependencies
 - validation method
 
+## Case-independence rule
+
+Compliance examples SHOULD describe implementation coverage, not story content.
+
+A compliance claim SHOULD NOT include concrete case plots, actor relationships, motive structures, methods, or clue chains.
+
+## V1 release note
+
+License selection is intentionally outside the current V1 audit scope.
+
+A missing license does not change whether the specification is internally coherent, but it may affect external distribution decisions.
+
 ## Related
 
 - CER-1401
@@ -66,3 +79,5 @@ A compliance claim SHOULD state:
 - CER-1403
 - CER-0006
 - CER-1200
+- RULE-0012
+- RULE-0013
