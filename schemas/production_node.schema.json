@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cer/schemas/production_node.schema.json",
+  "title": "CER Production Node",
+  "description": "Schema for a node in a CER Production Graph.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "node_id",
+    "node_type",
+    "title",
+    "status"
+  ],
+  "properties": {
+    "node_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "node_type": {
+      "type": "string",
+      "enum": [
+        "case_goal",
+        "production_plan",
+        "truth_model",
+        "fact",
+        "claim",
+        "event",
+        "actor",
+        "location",
+        "object",
+        "evidence_fragment",
+        "discovery_node",
+        "document_specification",
+        "artifact_production_specification",
+        "draft_artifact",
+        "approved_artifact",
+        "rendered_file",
+        "package_group",
+        "release_package",
+        "validation_report",
+        "repair_plan",
+        "human_decision"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "specified",
+        "in_production",
+        "draft",
+        "quality_checked",
+        "human_review",
+        "needs_revision",
+        "approved",
+        "locked",
+        "replaced",
+        "rejected",
+        "released"
+      ]
+    },
+    "owner_component": {
+      "type": "string"
+    },
+    "source_refs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "output_refs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "review_state": {
+      "type": "string",
+      "enum": [
+        "not_required",
+        "pending",
+        "approved",
+        "changes_requested",
+        "rejected"
+      ]
+    },
+    "lock_state": {
+      "type": "string",
+      "enum": [
+        "unlocked",
+        "locked"
+      ]
+    },
+    "version": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}
