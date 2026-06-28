@@ -2,7 +2,7 @@
 id: CER-0000
 title: Master Outline
 status: draft
-version: 0.3
+version: 0.4
 tags:
   - outline
   - reference-structure
@@ -38,7 +38,7 @@ Defines document models, metadata, roles, realism, requirements, specifications,
 
 Defines representative document types and the pattern for expanding the document library.
 
-V1 includes representative coverage, not an exhaustive catalog.
+The document type library provides representative coverage, not an exhaustive catalog.
 
 ## 06 — Discovery System
 
@@ -76,13 +76,9 @@ Defines production graph model, dependency tracking, change impact analysis, and
 
 Defines compliance levels, self assessment, and implementation guidance for CER.
 
-## 15 — V1 Hardening
-
-Defines the release-readiness material used to stabilize CER 1.0.
-
 ## Appendices
 
-Supporting folders include:
+Supporting reference folders include:
 
 - `adr/`
 - `rules/`
@@ -93,3 +89,9 @@ Supporting folders include:
 - `extensions/`
 
 These support the numbered CER sections but do not replace them.
+
+## Repository project material
+
+The repository may also contain project management, release planning, audit records, automation, and distribution material.
+
+That material supports publication and maintenance of CER, but it is not part of the CER specification.
