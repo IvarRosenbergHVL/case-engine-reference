@@ -2,11 +2,12 @@
 id: CER-1200
 title: Case Engine Index
 status: draft
-version: 0.1
+version: 0.2
 tags:
   - case-engine
   - implementation-reference
   - index
+  - audit-safe
 ---
 
 # Case Engine
@@ -50,15 +51,23 @@ A CER-compatible engine may be implemented with:
 - manual human workflows
 - scripted generation
 - database-driven tools
-- LLM agents
+- language model tools
 - image generation tools
 - renderers
 - validators
-- hybrid human and AI pipelines
+- hybrid human and tool-assisted pipelines
 
 The implementation method is secondary.
 
 The output must satisfy CER.
+
+## AI as implementation detail
+
+CER does not require AI.
+
+If AI tools are used, they are producers, reviewers, assistants, or implementation mechanisms. They do not replace CER requirements, traceability, validation, or human approval.
+
+Prompts and agent roles are implementation artifacts derived from specifications, not the specification itself.
 
 ## Engine components
 
@@ -84,6 +93,12 @@ An implementation may claim partial CER compatibility if it clearly states which
 
 Compatibility should be based on verifiable behavior, not on intent.
 
+## Case-independence rule
+
+Engine examples SHOULD describe component responsibilities and data flow only.
+
+They SHOULD NOT embed concrete case plots, actor relationships, motive structures, or evidence chains.
+
 ## Related
 
 - CER-0003
@@ -94,3 +109,4 @@ Compatibility should be based on verifiable behavior, not on intent.
 - CER-0900
 - CER-1000
 - CER-1100
+- RULE-0013
