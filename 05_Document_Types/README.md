@@ -2,10 +2,11 @@
 id: CER-0500
 title: Document Type Library Index
 status: draft
-version: 0.1
+version: 0.2
 tags:
   - document-types
   - index
+  - audit-safe
 ---
 
 # Document Type Library
@@ -51,22 +52,30 @@ Each document type SHOULD define:
 - writing constraints
 - rendering guidance
 - validation checks
-- example use cases
+- generic use patterns
 
 ## Document type families
 
-| Family | Examples |
+The following are document family examples, not required case content and not solution patterns.
+
+| Family | Document types |
 |---|---|
 | Police | incident report, scene report, interview, evidence log |
-| Forensics | autopsy, toxicology, DNA, fingerprint report |
-| Medical | medical record, prescription, patient note |
+| Forensics | autopsy report, toxicology report, DNA report, fingerprint report |
+| Medical | medical record, prescription record, patient note |
 | Digital | email, SMS, chat log, call log, metadata export |
 | Financial | bank statement, receipt, invoice, insurance record |
 | Personal | diary, letter, note, calendar, photo album |
 | Media | newspaper article, TV transcript, blog post |
 | Context | safety sheet, brochure, timetable, local guide |
-| Legal | will, contract, court record, warrant |
+| Legal | agreement, court record, warrant, administrative notice |
 | Visual | photograph, map, floor plan, diagram |
+
+## Case-independence rule
+
+Document type examples SHOULD describe artifact families only.
+
+They SHOULD NOT combine a document type with a concrete role, hidden relationship, motive, method, or clue chain.
 
 ## Normative requirements
 
@@ -84,3 +93,4 @@ A renderer SHOULD use document type metadata to select visual treatment.
 - CER-0406
 - CER-0411
 - RULE-0011
+- RULE-0012
