@@ -7,7 +7,6 @@ tags:
   - navigation
   - cer
   - obsidian
-  - v1
 aliases:
   - CER Home
   - Case Engine Reference
@@ -17,19 +16,17 @@ aliases:
 
 Welcome to **Case Engine Reference (CER)**.
 
-CER is the authoritative specification for designing, producing, validating, rendering, and packaging document-based investigation cases.
+CER is the authoritative reference for designing, producing, validating, rendering, and packaging document-based investigation cases.
 
-This repository can be opened directly as an Obsidian vault.
+This vault is intended to be read as a specification first. Repository management, release planning, and development history are supporting project material, not CER itself.
 
 ## Start here
 
-- [[README|GitHub README]]
 - [[MASTER_OUTLINE|Master Outline]]
-- [[ROADMAP|Roadmap]]
-- [[CHANGELOG|Changelog]]
-- [[15_V1_Hardening/V1_SCOPE_FREEZE|V1 Scope Freeze]]
-- [[15_V1_Hardening/AUDIT_CHECKLIST|V1 Audit Checklist]]
-- [[15_V1_Hardening/RC_CHECKLIST|Release Candidate Checklist]]
+- [[00_Specification_Framework/README|00 — Specification Framework]]
+- [[01_Foundations/README|01 — Foundations]]
+- [[02_Case_Architecture/README|02 — Case Architecture]]
+- [[03_Evidence_System/README|03 — Evidence System]]
 
 ## Core specification
 
@@ -48,9 +45,8 @@ This repository can be opened directly as an Obsidian vault.
 - [[12_Case_Engine/README|12 — Case Engine]]
 - [[13_Production_Graphs/README|13 — Production Graphs]]
 - [[14_Compliance/README|14 — Compliance]]
-- [[15_V1_Hardening/README|15 — V1 Hardening]]
 
-## Supporting material
+## Supporting reference material
 
 - [[adr/README|Architecture Decision Records]]
 - [[rules/README|Rules]]
@@ -58,6 +54,15 @@ This repository can be opened directly as an Obsidian vault.
 - [[schemas/README|Schemas]]
 - [[tests/README|Tests]]
 - [[extensions/README|Extensions]]
+
+## Project material
+
+Project material describes how this repository is maintained and released. It is not part of the CER specification.
+
+- [[README|Repository README]]
+- [[ROADMAP|Roadmap]]
+- [[CHANGELOG|Changelog]]
+- [[15_V1_Hardening/README|Release Readiness Material]]
 
 ## Core idea
 
@@ -89,12 +94,6 @@ graph TD
     Validation --> Export
 ```
 
-## V1 status
-
-CER is currently in **V1 hardening**.
-
-The specification content is largely complete. The remaining work is audit, consistency review, and release candidate preparation.
-
 ## Navigation tips
 
-Use Obsidian backlinks and graph view to explore how the specification connects across truth, evidence, documents, discovery, rendering, artifact production, validation, compliance, and release readiness.
+Use Obsidian backlinks and graph view to explore how the specification connects across truth, evidence, documents, discovery, rendering, artifact production, validation, compliance, and release packaging.
