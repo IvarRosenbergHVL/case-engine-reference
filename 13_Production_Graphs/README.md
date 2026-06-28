@@ -2,11 +2,12 @@
 id: CER-1300
 title: Production Graphs Index
 status: draft
-version: 0.1
+version: 0.2
 tags:
   - production-graphs
   - graph-model
   - dependencies
+  - audit-safe
 ---
 
 # Production Graphs
@@ -74,6 +75,12 @@ An Evidence Graph still defines evidence support.
 
 A Production Graph shows how production objects depend on each other across the full pipeline.
 
+## Case-independence rule
+
+Production Graph examples SHOULD describe dependencies between model objects, artifacts, and release files only.
+
+They SHOULD NOT encode concrete plot structures, actor relationships, motive structures, methods, or clue chains.
+
 ## Normative requirements
 
 A Case Engine SHOULD maintain enough dependency information to know what must be revalidated after a change.
@@ -84,6 +91,8 @@ Approved and locked nodes SHOULD be visible in the graph.
 
 Graph state SHOULD support human review and audit.
 
+Release graph state SHOULD preserve audience separation between player, hint, facilitator, production, and archive materials.
+
 ## Related
 
 - CER-1200
@@ -91,3 +100,4 @@ Graph state SHOULD support human review and audit.
 - CER-1212
 - CER-0900
 - CER-1103
+- RULE-0012
