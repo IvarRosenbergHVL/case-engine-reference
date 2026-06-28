@@ -2,7 +2,7 @@
 id: CER-1508
 title: V1 Audit Status
 status: draft
-version: 0.3
+version: 0.4
 tags:
   - v1
   - audit
@@ -26,10 +26,10 @@ The goal is to make the existing scope coherent, case-independent, navigable, an
 | V1 scope freeze | Complete | Scope freeze exists and is referenced from release materials. |
 | Top-level navigation | In progress | README, HOME, Roadmap, Master Outline, and Changelog are aligned to V1. |
 | Section landing pages | In progress | README files for 00 and 01 were added; document type subfolder indexes were added. |
-| Example safety | In progress | Known hidden identity concern remediated; 00-06 passes found no remaining direct match. |
+| Example safety | In progress | Known hidden identity concern remediated; 00-09 passes found no remaining direct match. |
 | Terminology | In progress | Terminology decisions exist; full repo application still needs review. |
 | Normative language | In progress | V1 rules exist; full MUST/SHOULD/MAY pass remains. |
-| Cross-references | In progress | Section landing links for 00, 01, and document type subfolders repaired. |
+| Cross-references | In progress | Failure mode index now matches the V1 failure mode set. |
 | Schemas | Complete for V1 | Minimal schema set exists. No schema expansion planned for V1. |
 | Compliance | Complete for V1 | Minimal compliance model exists. |
 | Obsidian support | Complete for V1 | Vault files and HOME portal exist. |
@@ -43,7 +43,7 @@ The goal is to make the existing scope coherent, case-independent, navigable, an
 |---|---|---:|---|
 | 00-03 | Specification Framework, Foundations, Case Architecture, Evidence System | Complete for V1 RC prep | `15_V1_Hardening/AUDIT_PASS_00_03.md` |
 | 04-06 | Document System, Document Types, Discovery System | Complete for V1 RC prep | `15_V1_Hardening/AUDIT_PASS_04_06.md` |
-| 07-09 | Information Economy, Failure Modes, Validation | Pending | TBD |
+| 07-09 | Information Economy, Failure Modes, Validation | Complete for V1 RC prep | `15_V1_Hardening/AUDIT_PASS_07_09.md` |
 | 10-12 | Rendering, Artifact Production, Case Engine | Pending | TBD |
 | 13-15 | Production Graphs, Compliance, V1 Hardening | Pending | TBD |
 | Support | ADR, rules, patterns, schemas, tests, extensions, workflows | Pending | TBD |
@@ -70,22 +70,25 @@ The goal is to make the existing scope coherent, case-independent, navigable, an
 - Section index files added for 00 and 01.
 - Document type subfolder indexes added for Police, Forensics, and Digital.
 - Document Type Library wording clarified to avoid treating document examples as solution patterns.
+- Failure Modes index aligned with the actual V1 failure mode set.
+- Outdated `document spam` wording replaced with `Low Value Documents`.
 
 ## Next audit pass
 
 The next pass should focus on:
 
-- `07_Information_Economy/`
-- `08_Failure_Modes/`
-- `09_Validation/`
+- `10_Rendering/`
+- `11_Artifact_Production/`
+- `12_Case_Engine/`
 
 Review criteria:
 
 - no concrete case examples
-- stable terminology
-- clear normative language
+- stable production terminology
+- clear human review and approval language
 - no obvious broken references
 - no scope expansion beyond V1
+- AI remains an implementation detail, not a requirement
 - Docusaurus and Obsidian navigation remain valid
 
 ## Related
