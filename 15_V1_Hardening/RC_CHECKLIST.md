@@ -2,7 +2,7 @@
 id: CER-1505
 title: RC Checklist
 status: draft
-version: 0.1
+version: 0.2
 tags:
   - v1
   - rc
@@ -34,6 +34,9 @@ It does not need to be perfect, but it should be coherent, scoped, and auditable
 | Failure modes | Critical V1 failure modes exist. |
 | Audit checklist | Editorial audit process is documented. |
 | Example policy | Case-independent example policy is followed. |
+| Obsidian vault | Repository can be opened as a vault. |
+| Static site | Documentation site scaffold exists and builds. |
+| Release definition | CER_VERSION_1_0.md exists. |
 
 ## Editorial checks
 
@@ -58,6 +61,9 @@ Before release candidate, the repository SHOULD include:
 - compliance documents
 - schema index
 - hardening checklist
+- CER version definition
+- Obsidian guide
+- static site configuration
 
 ## Blocking issues
 
@@ -69,6 +75,8 @@ The following SHOULD block release candidate:
 - unresolved release safety rules
 - no compliance model
 - no audit checklist
+- no license decision
+- failing documentation build
 
 ## Deferred work
 
@@ -81,6 +89,7 @@ The following MAY be deferred to V1.1:
 - GUI specifications
 - advanced certification
 - model-specific guidance
+- complete reference case package
 
 ## RC decision
 
@@ -92,6 +101,7 @@ Core sections are complete.
 Minimal schemas exist.
 Compliance model exists.
 Audit checklist exists.
+Release definition exists.
 Known blockers are resolved or tracked.
 ```
 
@@ -100,4 +110,5 @@ Known blockers are resolved or tracked.
 - CER-1500
 - CER-1501
 - CER-1502
+- CER-1508
 - CER-1400
