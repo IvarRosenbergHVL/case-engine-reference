@@ -4,6 +4,15 @@
 
 CER is not an implementation for a specific technology stack. It is the domain reference for compatible case engines, manual workflows, and hybrid production systems.
 
+## Specification vs repository
+
+The repository contains two kinds of material:
+
+1. **CER specification material** — the reference itself. This is the durable content intended for designers, writers, implementers, validators, and production teams.
+2. **Repository project material** — release planning, audit records, CI workflows, changelog entries, and distribution automation. This supports maintenance of the reference, but is not CER itself.
+
+When reading CER as a resource, start with `HOME.md` or `MASTER_OUTLINE.md` and follow the numbered specification sections.
+
 ## Purpose
 
 CER defines how a case engine or production workflow SHOULD model:
@@ -25,18 +34,13 @@ CER defines how a case engine or production workflow SHOULD model:
 >
 > Documents are never the information itself.
 
-## V1 status
+## Project status
 
-CER is currently in **V1 hardening**.
+CER is currently preparing for a v1.0 release candidate.
 
-The focus is completion, audit, consistency, and release candidate readiness.
+The current repository focus is editorial polish, consistency review, example safety, documentation quality, and release automation.
 
-See:
-
-- `15_V1_Hardening/V1_SCOPE_FREEZE.md`
-- `15_V1_Hardening/AUDIT_CHECKLIST.md`
-- `15_V1_Hardening/RC_CHECKLIST.md`
-- `15_V1_Hardening/RELEASE_CHECKLIST.md`
+New conceptual work is intentionally deferred unless required to complete the release candidate.
 
 ## Intended readers
 
@@ -55,12 +59,12 @@ CER is written for:
 
 ```text
 /
-├── README.md
-├── HOME.md
-├── MASTER_OUTLINE.md
-├── ROADMAP.md
-├── CHANGELOG.md
-├── CONTRIBUTING.md
+├── README.md                 # repository overview
+├── HOME.md                   # Obsidian/specification entry point
+├── MASTER_OUTLINE.md         # specification structure
+├── ROADMAP.md                # repository project material
+├── CHANGELOG.md              # repository project material
+├── CONTRIBUTING.md           # repository project material
 ├── 00_Specification_Framework/
 ├── 01_Foundations/
 ├── 02_Case_Architecture/
@@ -76,14 +80,16 @@ CER is written for:
 ├── 12_Case_Engine/
 ├── 13_Production_Graphs/
 ├── 14_Compliance/
-├── 15_V1_Hardening/
 ├── adr/
 ├── rules/
 ├── patterns/
 ├── schemas/
 ├── tests/
 ├── examples/
-└── extensions/
+├── extensions/
+├── 15_V1_Hardening/          # repository release-readiness material
+├── .github/                  # automation
+└── site/                     # static site support
 ```
 
 ## Normative language
@@ -96,7 +102,7 @@ CER uses RFC-style terminology:
 - SHOULD NOT
 - MAY
 
-These terms are defined in `00_Specification_Framework/SPECIFICATION_LANGUAGE.md` and refined for V1 in `15_V1_Hardening/NORMATIVE_LANGUAGE.md`.
+These terms are defined in `00_Specification_Framework/SPECIFICATION_LANGUAGE.md`.
 
 ## Implementation relationship
 
@@ -110,7 +116,24 @@ Conforms to: CER v1.0
 Compliance: Partial Level 2
 ```
 
-See `14_Compliance/` for the V1 compliance model.
+See `14_Compliance/` for the compliance model.
+
+## Obsidian
+
+The repository can be opened directly as an Obsidian vault.
+
+Use `HOME.md` as the entry point when reading CER as a connected reference.
+
+## Release artifacts
+
+Release automation may publish:
+
+- an Obsidian-ready ZIP
+- checksum files
+- release notes
+- a static documentation site
+
+These are distribution formats generated from the Markdown source.
 
 ## License
 
