@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cer/schemas/document_specification.schema.json",
+  "title": "CER Document Specification",
+  "description": "Schema for a planned document before writing or rendering.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "document_id",
+    "document_type",
+    "title",
+    "status",
+    "role"
+  ],
+  "properties": {
+    "document_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "document_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "specified",
+        "draft",
+        "review",
+        "approved",
+        "locked",
+        "rejected"
+      ]
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "context",
+        "evidence_exposure",
+        "corroboration",
+        "contradiction",
+        "elimination",
+        "misdirection",
+        "procedural_realism",
+        "visual_clue",
+        "facilitator_only"
+      ]
+    },
+    "source": {
+      "type": "string"
+    },
+    "audience_group": {
+      "type": "string",
+      "enum": [
+        "player",
+        "hints",
+        "facilitator",
+        "production",
+        "archive"
+      ]
+    },
+    "required_facts": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "evidence_exposures": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "forbidden_content": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "claim_refs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "context_requirements": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "metadata_requirements": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "rendering_requirements": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "quality_gates": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "related_nodes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    }
+  }
+}
