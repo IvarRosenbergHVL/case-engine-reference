@@ -2,58 +2,95 @@
 id: CER-0000
 title: Master Outline
 status: draft
-version: 0.1
+version: 0.2
 tags:
   - outline
   - governance
+  - v1
 ---
 
 # Master Outline
 
 This document is the structural contract for the Case Engine Reference.
 
-No new major CER topic SHOULD be created unless it has a defined place in this outline.
+No new major CER topic SHOULD be created before V1 unless it has a defined place in this outline and supports V1 release readiness.
 
-## Volume 0 — Specification Framework
+## 00 — Specification Framework
 
-Defines how CER is written, versioned, reviewed, named, linked, and validated.
+Defines how CER is written, versioned, reviewed, named, linked, scoped, and governed.
 
-## Volume I — Foundations
+## 01 — Foundations
 
-Defines the conceptual base of Case Engine: vision, design philosophy, core principles, investigation theory, information theory, and the concept of a case as an information system.
+Defines the conceptual base of CER: vision, core principles, investigation theory, fairness, and the case as an information system.
 
-## Volume II — Case Architecture
+## 02 — Case Architecture
 
-Defines the core models used to construct cases: Case Model, Truth Graph, Timeline Graph, Relationship Graph, Evidence Graph, Perception Graph, Discovery Graph, Document Distribution Matrix, and Means/Motive/Opportunity balance.
+Defines the core models used to construct cases: Truth Graph, Timeline Graph, Relationship Graph, Evidence Graph, Perception Graph, Discovery Graph, Document Distribution Matrix, Actor Model, Fact Model, Claim Model, Event Model, Object Model, Location Model, and Constraint Graph.
 
-## Volume III — Evidence System
+## 03 — Evidence System
 
-Defines evidence types, clues, ambiguity, contradiction, red herrings, false leads, cross-document reasoning, evidence redundancy, and optional evidence.
+Defines evidence fragments, evidence strength, reliability, redundancy, critical facts, context clues, corroboration, contradiction, red herrings, and means/motive/opportunity.
 
-## Volume IV — Document System
+## 04 — Document System
 
-Defines all document types and how they represent evidence: official documents, interviews, records, messages, photos, notes, newspapers, context documents, and templates.
+Defines document models, metadata, roles, realism, requirements, specifications, planning, distribution, validation, packaging, and rendering.
 
-## Volume V — Player Experience
+## 05 — Document Types
 
-Defines how players discover, misunderstand, discuss, and solve cases: player psychology, group reasoning, hypothesis progression, aha moments, dead ends, difficulty, and replayability.
+Defines representative document types and the pattern for expanding the document library.
 
-## Volume VI — AI Generation Engine
+V1 includes representative coverage, not an exhaustive catalog.
 
-Defines agent pipelines and generation architecture: case architect, perception architect, evidence planner, document planner, writers, image planner, validator, repair agent, assembler, and LangGraph mapping.
+## 06 — Discovery System
 
-## Volume VII — Validation
+Defines how players form hypotheses, build inference chains, eliminate possibilities, shift suspicion, and gain confidence.
 
-Defines quality gates, conformance checks, and test categories: solvability, timeline, suspect balance, discovery curve, document quality, spoiler safety, and conformance levels.
+## 07 — Information Economy
 
-## Volume VIII — Rendering
+Defines information density, clue density, noise, visibility, cognitive load, discovery cost, and context cost.
 
-Defines printable output and asset generation: DOCX export, PDF export, file packaging, visual identity, layout, evidence photos, logos, seals, and Markdown output.
+## 08 — Failure Modes
 
-## Volume IX — Facilitator Mode
+Defines critical design and production failures that can make a case unfair, broken, overloaded, or unsafe for release.
 
-Defines solution packs, hint systems, hosted play, spoiler warnings, common player mistakes, and replay facilitation.
+## 09 — Validation
 
-## Volume X — Reference and Appendices
+Defines validation model, quality dimensions, validation pipeline, reports, repair recommendations, case score, certification, rule engine, severity, waivers, and release decisions.
 
-Contains schemas, patterns, rules, tests, examples, glossary entries, templates, diagrams, and architecture decision records.
+## 10 — Rendering
+
+Defines rendering model, templates, assets, visual clue preservation, print readiness, export formats, audience separation, package manifests, rendering validation, and accessibility.
+
+## 11 — Artifact Production
+
+Defines specification-driven production of artifacts, human control, production workflow, quality gates, recommendations, prompt derivation, visual continuity, case style guide, capability profiles, and producer selection.
+
+## 12 — Case Engine
+
+Defines the implementation-independent reference architecture for a CER-compatible engine or workflow, from planning to export.
+
+## 13 — Production Graphs
+
+Defines production graph model, dependency tracking, change impact analysis, and partial regeneration.
+
+## 14 — Compliance
+
+Defines compliance levels, self assessment, and implementation guidance for CER V1.
+
+## 15 — V1 Hardening
+
+Defines scope freeze, audit checklist, terminology decisions, normative language rules, and release checklist for CER 1.0.
+
+## Appendices
+
+Supporting folders include:
+
+- `adr/`
+- `rules/`
+- `patterns/`
+- `schemas/`
+- `tests/`
+- `examples/`
+- `extensions/`
+
+These support the numbered CER sections but do not replace them.
