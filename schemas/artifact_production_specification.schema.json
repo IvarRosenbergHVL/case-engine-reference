@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cer/schemas/artifact_production_specification.schema.json",
+  "title": "CER Artifact Production Specification",
+  "description": "Schema for a work order used to produce a case artifact.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_id",
+    "artifact_type",
+    "purpose",
+    "status"
+  ],
+  "properties": {
+    "artifact_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact_type": {
+      "type": "string",
+      "enum": [
+        "document",
+        "photo",
+        "map",
+        "diagram",
+        "logo",
+        "stamp",
+        "screenshot",
+        "scan",
+        "cover",
+        "hint_card",
+        "facilitator_material",
+        "package_asset",
+        "other"
+      ]
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "specified",
+        "in_production",
+        "draft",
+        "quality_checked",
+        "human_review",
+        "needs_revision",
+        "approved",
+        "locked",
+        "rejected"
+      ]
+    },
+    "source_specification_refs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "required_facts": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "required_exposures": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "forbidden_content": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "style_requirements": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "continuity_requirements": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "production_recommendations": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "required_capabilities": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "producer_recommendation": {
+      "type": "string"
+    },
+    "quality_gates": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "not_started",
+        "pending",
+        "approved",
+        "changes_requested",
+        "rejected"
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}
