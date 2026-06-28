@@ -1,4 +1,4 @@
-name: Build Obsidian Vault ZIP
+name: Build Obsidian Release Package
 
 on:
   push:
@@ -10,36 +10,96 @@ permissions:
   contents: write
 
 jobs:
-  build-obsidian-zip:
+  build-release-package:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build vault folder
+      - name: Resolve version
+        id: version
         shell: bash
         run: |
           set -euo pipefail
           VERSION="${GITHUB_REF_NAME:-manual}"
-          OUT="CER-${VERSION}-Obsidian"
+          if [ "${GITHUB_REF_TYPE:-}" != "tag" ]; then
+            VERSION="manual-${GITHUB_RUN_NUMBER}"
+          fi
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "vault_name=CER-${VERSION}-Obsidian" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Docusaurus site
+        run: npm run build
+
+      - name: Build Obsidian vault folder
+        shell: bash
+        run: |
+          set -euo pipefail
+          VERSION="${{ steps.version.outputs.version }}"
+          OUT="${{ steps.version.outputs.vault_name }}"
           mkdir -p "dist/${OUT}"
           rsync -av \
             --exclude='.git/' \
             --exclude='.github/' \
+            --exclude='node_modules/' \
+            --exclude='build/' \
             --exclude='dist/' \
             --exclude='.DS_Store' \
+            --exclude='package-lock.json' \
             ./ "dist/${OUT}/"
           cd dist
           zip -r "${OUT}.zip" "${OUT}"
 
-      - name: Upload workflow artifact
+      - name: Generate SHA256 checksums
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd dist
+          sha256sum *.zip > SHA256SUMS.txt
+
+      - name: Generate release notes
+        shell: bash
+        run: |
+          set -euo pipefail
+          VERSION="${{ steps.version.outputs.version }}"
+          cat > dist/RELEASE_NOTES.md <<EOF
+          # CER ${VERSION}
+
+          This release package contains the Obsidian-ready CER vault generated from the repository source.
+
+          ## Assets
+
+          - CER Obsidian vault ZIP
+          - SHA256 checksums
+
+          ## Source of truth
+
+          The Markdown files in the repository remain the authoritative source. The ZIP is a distribution artifact for Obsidian users.
+          EOF
+
+      - name: Upload workflow artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: CER-Obsidian-Vault
-          path: dist/*.zip
+          name: CER-Release-Package
+          path: |
+            dist/*.zip
+            dist/SHA256SUMS.txt
+            dist/RELEASE_NOTES.md
 
-      - name: Attach ZIP to GitHub Release
+      - name: Attach assets to GitHub Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/*.zip
+          body_path: dist/RELEASE_NOTES.md
+          files: |
+            dist/*.zip
+            dist/SHA256SUMS.txt
