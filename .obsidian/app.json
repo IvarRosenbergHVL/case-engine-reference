@@ -1,0 +1,11 @@
+{
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "assets",
+  "newFileLocation": "current",
+  "showLineNumber": false,
+  "showUnsupportedFiles": true,
+  "userIgnoreFilters": [
+    ".git/",
+    ".github/"
+  ]
+}
