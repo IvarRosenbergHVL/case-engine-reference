@@ -2,10 +2,12 @@
 id: CER-EXT-0000
 title: Extensions
 status: draft
-version: 0.1
+version: 0.2
 tags:
   - extensions
   - scope-control
+  - v1
+  - audit-safe
 ---
 
 # Extensions
@@ -16,14 +18,14 @@ The purpose of this folder is to prevent uncontrolled expansion of the core spec
 
 ## Extension rule
 
-A feature SHALL be treated as an extension when it is useful but not necessary to implement a complete paper-based cold case generator.
+A feature SHALL be treated as an extension when it is useful but not necessary to implement a complete paper-based case package generator.
 
 ## Examples of extensions
 
 Potential extensions include:
 
 - live hosted event orchestration
-- AI non-player characters
+- non-player character interaction
 - audio evidence packages
 - video evidence packages
 - augmented reality scenes
@@ -58,6 +60,12 @@ An extension SHOULD include:
 9. Agent impact
 10. Backward compatibility
 
+## Audit note
+
+Extensions SHOULD describe capabilities, integration points, and validation impact.
+
+Extensions SHOULD NOT introduce concrete case plots, actor relationships, motive structures, methods, or clue chains.
+
 ## Promotion to core
 
 An extension MAY be promoted to core in a future major version if:
@@ -73,3 +81,9 @@ An extension MAY be promoted to core in a future major version if:
 When in doubt, prefer placing a speculative idea in `extensions/` rather than expanding v1.0 Core.
 
 CER v1.0 should be complete, not endless.
+
+## Related
+
+- `15_V1_Hardening/V1_SCOPE_FREEZE.md`
+- `rules/RULE-0012-no-case-specific-reference-content.md`
+- `rules/RULE-0013-ai-is-implementation-not-requirement.md`
