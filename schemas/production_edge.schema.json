@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cer/schemas/production_edge.schema.json",
+  "title": "CER Production Edge",
+  "description": "Schema for a dependency edge in a CER Production Graph.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "edge_id",
+    "edge_type",
+    "from_node",
+    "to_node"
+  ],
+  "properties": {
+    "edge_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "edge_type": {
+      "type": "string",
+      "enum": [
+        "depends_on",
+        "derives_from",
+        "exposes",
+        "supports",
+        "contradicts",
+        "renders_to",
+        "packaged_in",
+        "validates",
+        "repairs",
+        "replaces",
+        "approved_by",
+        "locked_by"
+      ]
+    },
+    "from_node": {
+      "type": "string",
+      "minLength": 1
+    },
+    "to_node": {
+      "type": "string",
+      "minLength": 1
+    },
+    "meaning": {
+      "type": "string"
+    },
+    "dependency_strength": {
+      "type": "string",
+      "enum": [
+        "hard",
+        "soft",
+        "reference",
+        "style",
+        "package"
+      ]
+    },
+    "validation_relevance": {
+      "type": "boolean"
+    },
+    "repair_relevance": {
+      "type": "boolean"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}
