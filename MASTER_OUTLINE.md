@@ -2,18 +2,17 @@
 id: CER-0000
 title: Master Outline
 status: draft
-version: 0.2
+version: 0.3
 tags:
   - outline
-  - governance
-  - v1
+  - reference-structure
 ---
 
 # Master Outline
 
-This document is the structural contract for the Case Engine Reference.
+This document is the structural map for the Case Engine Reference.
 
-No new major CER topic SHOULD be created before V1 unless it has a defined place in this outline and supports V1 release readiness.
+Major CER topics SHOULD have a defined place in this outline before they are introduced into the specification.
 
 ## 00 — Specification Framework
 
@@ -75,11 +74,11 @@ Defines production graph model, dependency tracking, change impact analysis, and
 
 ## 14 — Compliance
 
-Defines compliance levels, self assessment, and implementation guidance for CER V1.
+Defines compliance levels, self assessment, and implementation guidance for CER.
 
 ## 15 — V1 Hardening
 
-Defines scope freeze, audit checklist, terminology decisions, normative language rules, and release checklist for CER 1.0.
+Defines the release-readiness material used to stabilize CER 1.0.
 
 ## Appendices
 
