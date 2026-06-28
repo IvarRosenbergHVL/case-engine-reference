@@ -2,10 +2,11 @@
 id: CER-1100
 title: Artifact Production Index
 status: draft
-version: 0.1
+version: 0.2
 tags:
   - artifact-production
   - index
+  - audit-safe
 ---
 
 # Artifact Production
@@ -44,18 +45,19 @@ Case Facts
 | Production Workflow | Defines status, review, revision, approval, and locking. |
 | Human Control | Defines human authority over artifact approval. |
 | Quality Gates | Defines required checks before approval. |
-| Production Recommendations | Defines optional guidance for humans or AI tools. |
+| Production Recommendations | Defines optional guidance for humans or tools. |
 | Prompt Derivation | Defines prompts as derived implementation artifacts. |
 | Visual Continuity | Defines consistency across generated and human-made assets. |
+| Case Style Guide | Defines case-specific style requirements without replacing facts. |
+| Capability Profile | Describes what a producer or tool can safely produce. |
+| Producer Selection | Matches production tasks to capable producers. |
 
 ## Artifact types
 
 Artifact Production MAY apply to:
 
-- police documents
-- forensic reports
-- personal documents
-- digital records
+- documents
+- records
 - photographs
 - maps
 - diagrams
@@ -66,6 +68,22 @@ Artifact Production MAY apply to:
 - package covers
 - hint cards
 - facilitator material
+
+These are artifact categories, not required case content or solution patterns.
+
+## AI as implementation detail
+
+AI tools MAY be used as producers or assistants.
+
+AI use does not remove the need for specifications, validation, human review, human approval, or locked release artifacts.
+
+Prompts are derived from artifact specifications. Prompts are not the source of truth.
+
+## Case-independence rule
+
+Artifact production examples SHOULD describe production requirements, quality gates, and acceptance criteria only.
+
+They SHOULD NOT embed concrete case plots, actor relationships, motive structures, methods, or clue chains.
 
 ## Normative requirements
 
@@ -83,3 +101,5 @@ A locked artifact SHOULD NOT be modified without explicit approval.
 - CER-0406
 - CER-1000
 - CER-0900
+- RULE-0012
+- RULE-0013
