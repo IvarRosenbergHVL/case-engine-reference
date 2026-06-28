@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cer/schemas/package_manifest.schema.json",
+  "title": "CER Package Manifest",
+  "description": "Schema for release package contents and audience grouping.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "package_id",
+    "case_id",
+    "version",
+    "package_group",
+    "files"
+  ],
+  "properties": {
+    "package_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "package_group": {
+      "type": "string",
+      "enum": [
+        "player",
+        "hints",
+        "facilitator",
+        "production",
+        "archive"
+      ]
+    },
+    "approval_state": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "review",
+        "approved",
+        "released",
+        "withdrawn"
+      ]
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "audience_group",
+          "format"
+        ],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "audience_group": {
+            "type": "string",
+            "enum": [
+              "player",
+              "hints",
+              "facilitator",
+              "production",
+              "archive"
+            ]
+          },
+          "artifact_ref": { "type": "string" },
+          "render_ref": { "type": "string" },
+          "approval_status": {
+            "type": "string",
+            "enum": [
+              "draft",
+              "approved",
+              "locked",
+              "rejected"
+            ]
+          },
+          "format": {
+            "type": "string",
+            "enum": [
+              "pdf",
+              "png",
+              "jpg",
+              "jpeg",
+              "json",
+              "md",
+              "zip",
+              "other"
+            ]
+          },
+          "checksum": { "type": "string" },
+          "print_note": { "type": "string" }
+        }
+      }
+    },
+    "release_notes": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}
