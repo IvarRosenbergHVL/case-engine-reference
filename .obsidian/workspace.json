@@ -1,0 +1,64 @@
+{
+  "main": {
+    "id": "main",
+    "type": "split",
+    "children": [
+      {
+        "id": "home",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "HOME.md",
+            "mode": "preview",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "left",
+    "type": "split",
+    "children": [
+      {
+        "id": "files",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "right",
+    "type": "split",
+    "children": [
+      {
+        "id": "outline",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "HOME.md"
+          }
+        }
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "home",
+  "lastOpenFiles": [
+    "HOME.md",
+    "README.md",
+    "MASTER_OUTLINE.md",
+    "ROADMAP.md",
+    "15_V1_Hardening/V1_SCOPE_FREEZE.md"
+  ]
+}
