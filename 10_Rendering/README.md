@@ -2,10 +2,11 @@
 id: CER-1000
 title: Rendering Framework Index
 status: draft
-version: 0.1
+version: 0.2
 tags:
   - rendering
   - index
+  - audit-safe
 ---
 
 # Rendering Framework
@@ -63,6 +64,12 @@ Rendering SHALL preserve evidence meaning.
 
 A renderer may change layout, typography, and visual style, but it must not change the facts, claims, timestamps, visibility intent, or spoiler boundaries defined by the document specification.
 
+## Case-independence rule
+
+Rendering examples SHOULD describe layout, visibility, package grouping, and artifact handling only.
+
+They SHOULD NOT embed concrete case plots, actor relationships, motive structures, or clue chains.
+
 ## Normative requirements
 
 Rendered artifacts SHOULD be traceable to document specifications.
@@ -73,9 +80,12 @@ Facilitator-only artifacts MUST remain separated from player-facing artifacts.
 
 Rendered outputs SHOULD be validated before packaging.
 
+Rendering validation SHOULD check both evidence preservation and audience separation.
+
 ## Related
 
 - CER-0411
 - CER-0410
 - CER-0903
 - CER-0904
+- RULE-0012
