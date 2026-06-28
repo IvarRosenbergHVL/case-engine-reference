@@ -1,0 +1,15 @@
+node_modules/
+build/
+dist/
+.docusaurus/
+.cache/
+.DS_Store
+*.log
+
+# Obsidian local state
+.obsidian/workspace-mobile.json
+.obsidian/plugins/
+.obsidian/snippets/
+
+# Release artifacts
+*.zip
