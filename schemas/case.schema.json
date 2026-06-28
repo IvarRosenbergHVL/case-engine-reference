@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/cer/schemas/case.schema.json",
+  "title": "CER Case",
+  "description": "Top-level schema for a CER-compatible case package model.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "title",
+    "version",
+    "status",
+    "models"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "review",
+        "approved",
+        "locked",
+        "released",
+        "archived"
+      ]
+    },
+    "language": {
+      "type": "string"
+    },
+    "target_playtime_minutes": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "target_difficulty": {
+      "type": "string",
+      "enum": [
+        "introductory",
+        "standard",
+        "advanced",
+        "expert"
+      ]
+    },
+    "models": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "truth_model_ref": { "type": "string" },
+        "evidence_graph_ref": { "type": "string" },
+        "discovery_graph_ref": { "type": "string" },
+        "document_graph_ref": { "type": "string" },
+        "artifact_graph_ref": { "type": "string" },
+        "production_graph_ref": { "type": "string" },
+        "release_graph_ref": { "type": "string" }
+      }
+    },
+    "package_groups": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "player",
+          "facilitator",
+          "hints",
+          "production",
+          "archive"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}
