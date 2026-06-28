@@ -2,7 +2,7 @@
 id: CER-1508
 title: V1 Audit Status
 status: draft
-version: 0.2
+version: 0.3
 tags:
   - v1
   - audit
@@ -25,11 +25,11 @@ The goal is to make the existing scope coherent, case-independent, navigable, an
 |---|---:|---|
 | V1 scope freeze | Complete | Scope freeze exists and is referenced from release materials. |
 | Top-level navigation | In progress | README, HOME, Roadmap, Master Outline, and Changelog are aligned to V1. |
-| Section landing pages | In progress | Missing README files for 00 and 01 were added in audit pass 00-03. |
-| Example safety | In progress | Known hidden identity concern remediated; 00-03 pass found no remaining direct match. |
+| Section landing pages | In progress | README files for 00 and 01 were added; document type subfolder indexes were added. |
+| Example safety | In progress | Known hidden identity concern remediated; 00-06 passes found no remaining direct match. |
 | Terminology | In progress | Terminology decisions exist; full repo application still needs review. |
 | Normative language | In progress | V1 rules exist; full MUST/SHOULD/MAY pass remains. |
-| Cross-references | In progress | 00 and 01 sidebar landing links repaired; full Related reference audit remains. |
+| Cross-references | In progress | Section landing links for 00, 01, and document type subfolders repaired. |
 | Schemas | Complete for V1 | Minimal schema set exists. No schema expansion planned for V1. |
 | Compliance | Complete for V1 | Minimal compliance model exists. |
 | Obsidian support | Complete for V1 | Vault files and HOME portal exist. |
@@ -42,7 +42,7 @@ The goal is to make the existing scope coherent, case-independent, navigable, an
 | Pass | Scope | Status | Record |
 |---|---|---:|---|
 | 00-03 | Specification Framework, Foundations, Case Architecture, Evidence System | Complete for V1 RC prep | `15_V1_Hardening/AUDIT_PASS_00_03.md` |
-| 04-06 | Document System, Document Types, Discovery System | Pending | TBD |
+| 04-06 | Document System, Document Types, Discovery System | Complete for V1 RC prep | `15_V1_Hardening/AUDIT_PASS_04_06.md` |
 | 07-09 | Information Economy, Failure Modes, Validation | Pending | TBD |
 | 10-12 | Rendering, Artifact Production, Case Engine | Pending | TBD |
 | 13-15 | Production Graphs, Compliance, V1 Hardening | Pending | TBD |
@@ -68,14 +68,16 @@ The goal is to make the existing scope coherent, case-independent, navigable, an
 - Release Checklist added.
 - CER Version 1.0 definition added.
 - Section index files added for 00 and 01.
+- Document type subfolder indexes added for Police, Forensics, and Digital.
+- Document Type Library wording clarified to avoid treating document examples as solution patterns.
 
 ## Next audit pass
 
 The next pass should focus on:
 
-- `04_Document_System/`
-- `05_Document_Types/`
-- `06_Discovery_System/`
+- `07_Information_Economy/`
+- `08_Failure_Modes/`
+- `09_Validation/`
 
 Review criteria:
 
