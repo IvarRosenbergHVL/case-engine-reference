@@ -2,7 +2,7 @@
 id: CER-1512
 title: Audit Pass 10-12
 status: draft
-version: 0.1
+version: 0.2
 tags:
   - v1
   - audit
@@ -21,37 +21,48 @@ Reviewed scope:
 - `10_Rendering/`
 - `11_Artifact_Production/`
 - `12_Case_Engine/`
-- production terminology and implementation-independence wording
+- production terminology around artifacts, review, approval, and locking
+- AI-as-implementation-detail language
 
 ## Case-independence review
 
-This pass focused on production and engine descriptions.
+This pass focused on production and rendering language.
 
 The audit checked for:
 
-- concrete artifact examples that imply a specific case
-- rendering examples that reveal a solution pattern
-- production examples that encode a hidden relationship or motive chain
-- AI-specific wording that makes AI a CER requirement
-- implementation examples that behave like a concrete case story
+- concrete artifact examples that imply a case story
+- rendering examples that embed clue chains
+- production examples that include role, relationship, motive, or method details
+- AI workflow language that turns a tool into a normative CER requirement
+- inconsistencies between artifact, document, rendered artifact, release file, approval, and locking
 
 ## Findings
 
 No direct match was found for the known hidden-identity concern pattern.
 
-The Case Engine index was generally implementation-independent, but it still used wording that could be clarified to avoid making AI or LLM agents appear central to CER compatibility.
+The Rendering index and Artifact Production index were structurally sound, but both benefited from explicit case-independence language.
+
+The Artifact Production index also benefited from a clearer AI-as-implementation-detail statement at the section level.
 
 ## Cross-reference review
 
-The Case Engine index was updated to add explicit links to the rule that AI is an implementation detail.
+Updated section indexes now reference:
+
+- `RULE-0012` for case-independent examples
+- `RULE-0013` for AI-as-implementation-not-requirement
+
+This improves traceability between V1 hardening rules and production sections.
 
 ## Changes made
 
-- Updated `12_Case_Engine/README.md`.
-- Added an explicit `AI as implementation detail` section.
-- Replaced `LLM agents` with more neutral `language model tools`.
-- Clarified that prompts and agent roles are derived implementation artifacts, not the specification itself.
-- Added a case-independence rule for engine examples.
+- Updated `10_Rendering/README.md`.
+- Added rendering case-independence rule.
+- Added rendering validation emphasis on evidence preservation and audience separation.
+- Updated `11_Artifact_Production/README.md`.
+- Clarified artifact categories are not required case content or solution patterns.
+- Added explicit AI-as-implementation-detail language.
+- Added artifact production case-independence rule.
+- Confirmed `12_Case_Engine/README.md` already contains implementation-independence and AI-as-implementation-detail language.
 - Recorded this audit pass.
 
 ## Remaining work
@@ -64,11 +75,11 @@ The next audit pass should review:
 
 Focus areas:
 
-- release readiness wording
-- compliance terminology
-- audit status consistency
-- case-independence references
-- final release blockers
+- release status consistency
+- compliance language
+- audit and RC checklist alignment
+- production graph terminology
+- remaining cross-reference issues
 
 ## Status
 
@@ -79,5 +90,8 @@ Audit pass 10-12 is considered complete for V1 RC preparation, subject to final 
 - `15_V1_Hardening/AUDIT_STATUS.md`
 - `15_V1_Hardening/AUDIT_CHECKLIST.md`
 - `15_V1_Hardening/CASE_INDEPENDENCE_AUDIT.md`
+- `10_Rendering/README.md`
+- `11_Artifact_Production/README.md`
 - `12_Case_Engine/README.md`
+- `rules/RULE-0012-no-case-specific-reference-content.md`
 - `rules/RULE-0013-ai-is-implementation-not-requirement.md`
