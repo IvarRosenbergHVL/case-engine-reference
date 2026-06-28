@@ -2,15 +2,16 @@
 id: CER-0800
 title: Failure Modes Index
 status: draft
-version: 0.1
+version: 0.2
 tags:
   - failure-modes
   - index
+  - audit-safe
 ---
 
 # Failure Modes
 
-Failure Modes define common ways a homicide investigation case can become unfair, unsatisfying, incoherent, or difficult to validate.
+Failure Modes define common ways an investigation case can become unfair, unsatisfying, incoherent, or difficult to validate.
 
 ## Purpose
 
@@ -22,7 +23,7 @@ Failure Modes give designers, reviewers, and validators a shared vocabulary for 
 
 A Failure Mode is a recurring design or validation problem with a known player impact and likely repair strategy.
 
-Failure Modes are not merely writing issues. They describe structural weaknesses in truth, evidence, discovery, document distribution, information economy, or rendering.
+Failure Modes are not merely writing issues. They describe structural weaknesses in truth, evidence, discovery, document distribution, information economy, rendering, or packaging.
 
 ## Failure mode record
 
@@ -49,18 +50,26 @@ Each Failure Mode SHOULD define:
 | Major | Likely to harm solvability or experience. |
 | Critical | Breaks core fairness, consistency, or solution validity. |
 
-## Initial failure mode families
+## V1 failure modes
 
-| Family | Examples |
-|---|---|
-| Solution fairness | Obvious culprit, unsupported solution, equal solutions. |
-| Evidence coverage | Hidden critical clue, critical fact bottleneck. |
-| Discovery | No traction, late dump, false plateau. |
-| Information economy | Information overload, excessive noise, document spam. |
-| Red herrings | Overpowered red herring, unfair misdirection. |
-| Context | Missing context, excessive context cost. |
-| Timeline | Broken timeline, impossible opportunity. |
-| Rendering | Cropped clue, illegible artifact, spoiler leakage. |
+| ID | Name | Primary concern |
+|---|---|---|
+| FM-0001 | Obvious Culprit | Solution balance and suspicion design. |
+| FM-0002 | Hidden Critical Clue | Missing or underexposed decisive information. |
+| FM-0003 | Critical Fact Bottleneck | A required inference depends on one fragile exposure. |
+| FM-0004 | Broken Timeline | Event order, duration, or source knowledge conflict. |
+| FM-0005 | Impossible Opportunity | Required opportunity contradicts timeline, access, or location constraints. |
+| FM-0006 | Missing Context | Required background knowledge is absent from the package. |
+| FM-0007 | Information Overload | Too much undifferentiated material prevents reasoning. |
+| FM-0008 | Low Value Documents | Documents exist without enough evidence, context, or discovery function. |
+| FM-0009 | Spoiler Leakage | Restricted material or answer-only information becomes visible too early. |
+| FM-0010 | Circular Reasoning | The intended conclusion depends on assuming itself. |
+
+## Case-independence rule
+
+Failure Mode descriptions SHOULD describe structural problems, not concrete case stories.
+
+Detection signals and repair strategies SHOULD use generic case elements or abstract language unless a specific model object is required.
 
 ## Normative requirements
 
@@ -78,3 +87,4 @@ Failure Mode detection SHOULD cite affected case elements when possible.
 - CER-0400
 - CER-0600
 - CER-0700
+- RULE-0012
