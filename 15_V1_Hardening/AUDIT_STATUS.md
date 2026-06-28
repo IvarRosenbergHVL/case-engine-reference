@@ -2,7 +2,7 @@
 id: CER-1508
 title: V1 Audit Status
 status: draft
-version: 0.5
+version: 0.6
 tags:
   - v1
   - audit
@@ -27,9 +27,9 @@ The goal is to make the existing scope coherent, case-independent, navigable, an
 | Top-level navigation | In progress | README, HOME, Roadmap, Master Outline, and Changelog are aligned to V1. |
 | Section landing pages | In progress | README files for 00 and 01 were added; document type subfolder indexes were added. |
 | Example safety | In progress | Known hidden identity concern remediated; 00-12 passes found no remaining direct match. |
-| Terminology | In progress | Production and engine terminology clarified in 10-12 pass. |
+| Terminology | In progress | Production, rendering, artifact, and engine terminology clarified in 10-12 pass. |
 | Normative language | In progress | V1 rules exist; full MUST/SHOULD/MAY pass remains. |
-| Cross-references | In progress | Case Engine now references AI-as-implementation rule. |
+| Cross-references | In progress | Rendering, Artifact Production, and Case Engine now reference case-independence and AI-as-implementation rules where relevant. |
 | Schemas | Complete for V1 | Minimal schema set exists. No schema expansion planned for V1. |
 | Compliance | Complete for V1 | Minimal compliance model exists. |
 | Obsidian support | Complete for V1 | Vault files and HOME portal exist. |
@@ -72,8 +72,11 @@ The goal is to make the existing scope coherent, case-independent, navigable, an
 - Document Type Library wording clarified to avoid treating document examples as solution patterns.
 - Failure Modes index aligned with the actual V1 failure mode set.
 - Outdated `document spam` wording replaced with `Low Value Documents`.
-- Case Engine index clarified that AI is an implementation detail.
-- Case Engine examples constrained to component responsibilities and data flow.
+- Rendering index now includes case-independence and audience-separation emphasis.
+- Artifact Production index now clarifies artifact categories are not case content or solution patterns.
+- Artifact Production index now restates AI as an implementation detail.
+- Case Engine index clarifies that AI is an implementation detail.
+- Case Engine examples are constrained to component responsibilities and data flow.
 
 ## Next audit pass
 
